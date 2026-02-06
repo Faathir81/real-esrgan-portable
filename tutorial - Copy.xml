@@ -1,0 +1,47 @@
+<!-- REAL-ESRGAN TUTORIAL -->
+< This note was edited by "NIHIL Project" and is based on the official GitHub page "xinntao" about Real-ESRGAN. More detailed instructions can be found on the official page at the following link: https://github.com/xinntao/Real-ESRGAN >
+
+1. Place the images in the same folder level as your .exe file.
+
+2. [cd] To where your file is located on your command prompt, and you can simply run the following command: (replace the () with the corresponding name:
+realesrgan-ncnn-vulkan.exe -i (input_image) -o (output.png)
+
+example (default):
+	< realesrgan-ncnn-vulkan.exe -i Photo.jpg -o PhotoHD.png >
+
+3. You can use the -n argument for other models:
+realesrgan-ncnn-vulkan.exe -i (input_image) -o (output.png) -n (model_name)
+
+example (take the original photo details, but the results are still a little blurry):
+	< realesrgan-ncnn-vulkan.exe -i Photo.jpg -o PhotoHD.png -n realesrnet-x4plus >
+example (better for anime/cartoons):
+	< realesrgan-ncnn-vulkan.exe -i Photo.jpg -o PhotoHD.png -n realesrgan-x4plus-anime >
+
+4. You can enhance the quality of multiple photos/images in a specific folder at the same time:
+realesrgan-ncnn-vulkan.exe -i (input_folder) -o (output_folder)
+
+example (with default model):
+	< realesrgan-ncnn-vulkan.exe -i lowres -o highres >
+example (with model):
+	< realesrgan-ncnn-vulkan.exe -i lowres -o highres -n realesrnet-x4plus > or
+	< realesrgan-ncnn-vulkan.exe -i lowres -o highres -n realesrgan-x4plus-anime >
+	
+====================================================================================
+
+📝 Usage: realesrgan-ncnn-vulkan.exe -i infile -o outfile [options]...
+
+  -h					show this help
+  -v					verbose output
+  -i input-path			input image path (jpg/png/webp) or directory
+  -o output-path		output image path (jpg/png/webp) or directory
+  -s scale				upscale ratio (4, default=4)
+  -t tile-size			tile size (>=32/0=auto, default=0) can be 0,0,0 for multi-gpu
+  -m model-path			folder path to pre-trained models(default=models)
+  -n model-name			model name (default=realesrgan-x4plus, can be realesrgan-x4plus |
+						realesrgan-x4plus-anime | realesrnet-x4plus)
+  -g gpu-id				gpu device to use (default=0) can be 0,1,2 for multi-gpu
+  -j load:proc:save 	thread count for load/proc/save (default=1:2:2) can be 1:2,2,2:2 for multi-gpu
+  -x					enable tta mode
+  -f format				output image format (jpg/png/webp, default=ext/png)
+  
+====================================================================================

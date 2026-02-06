@@ -1,0 +1,23 @@
+# ================================
+# Real-ESRGAN Portable - .gitignore
+# ================================
+
+# Folder input/output gambar (jangan ikut push)
+Real-ESRGAN/
+input/
+tmp_frames/
+out_frames/
+
+# File hasil upscale yang mungkin di root
+*HD.png
+*HD.jpg
+
+# Windows system files
+Thumbs.db
+desktop.ini
+*.tmp
+
+# Folder backup/test
+Damfartus/
+dumbfartus/
+backcup/
