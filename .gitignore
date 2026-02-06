@@ -2,11 +2,19 @@
 # Real-ESRGAN Portable - .gitignore
 # ================================
 
-# Folder input/output gambar (jangan ikut push)
-Real-ESRGAN/
-input/
-tmp_frames/
-out_frames/
+# Ignore semua file gambar di folder input/output
+# Tapi folder tetap ke-track karena ada .gitkeep
+input/*
+!input/.gitkeep
+
+Real-ESRGAN/*
+!Real-ESRGAN/.gitkeep
+
+tmp_frames/*
+!tmp_frames/.gitkeep
+
+out_frames/*
+!out_frames/.gitkeep
 
 # File hasil upscale yang mungkin di root
 *HD.png
@@ -16,8 +24,3 @@ out_frames/
 Thumbs.db
 desktop.ini
 *.tmp
-
-# Folder backup/test
-Damfartus/
-dumbfartus/
-backcup/
